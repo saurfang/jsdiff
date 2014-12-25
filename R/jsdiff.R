@@ -12,13 +12,16 @@
 #' @import htmlwidgets
 #'
 #' @export
-jsdiff <- function(oldStr, newStr, diffType = c("Chars", "Words", "Lines"), language = "r", width = NULL, height = NULL) {
+jsdiff <- function(oldStr, newStr,
+                   diffType = c("Lines", "Words", "Chars"),
+                   language = "r",
+                   width = NULL, height = NULL) {
   diffType <- match.arg(diffType)
 
   # forward options using x
   x = list(
-    oldStr = oldStr,
-    newStr = newStr,
+    oldStr = toCharacter(oldStr),
+    newStr = toCharacter(newStr),
     diffType = diffType,
     language = language
   )
@@ -31,6 +34,14 @@ jsdiff <- function(oldStr, newStr, diffType = c("Chars", "Words", "Lines"), lang
     height = height,
     package = 'jsdiff'
   )
+}
+
+toCharacter <- function(x) {
+  if(!is.character(x)) {
+    paste(capture.output(print(x)), collapse = "\n")
+  } else {
+    x
+  }
 }
 
 #' @import shiny
