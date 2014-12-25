@@ -1,0 +1,16 @@
+{
+    "contents" : "---\ntitle: \"Introduction to jsdiff\"\noutput: \n  rmarkdown::html_vignette\nvignette: >\n  %\\VignetteIndexEntry{Vignette Title}\n  %\\VignetteEngine{knitr::rmarkdown}\n  \\usepackage[utf8]{inputenc}\n---\n\nFrom http://adv-r.had.co.nz/Profiling.html\n```{r}\ndiff2 <- function (x, lag = 1L, differences = 1L) {\n  xlen <- length(x)\n  if (length(lag) > 1L || length(differences) > 1L || \n      lag < 1L || differences < 1L)\n    stop(\"'lag' and 'differences' must be integers >= 1\")\n\n  if (lag * differences >= xlen) {\n    return(x[0L])\n  }\n\n  i1 <- -seq_len(lag)\n  for (i in seq_len(differences)) {\n    x <- x[i1] - x[-length(x):-(length(x) - lag + 1L)]\n  }\n  x\n}\n\ndiff3 <- function (x, lag = 1L) {\n  xlen <- length(x)\n  if (length(lag) > 1L || lag < 1L)\n    stop(\"'lag' must be integer >= 1\")\n\n  if (lag >= xlen) {\n    return(x[0L])\n  }\n\n  i1 <- -seq_len(lag)\n  x[i1] - x[-length(x):-(length(x) - lag + 1L)]\n}\n```\n\n```{r}\nlibrary(jsdiff)\n\nprintfun <- function(fun) {\n  paste(capture.output(print(fun)), collapse = \"\\n\")\n}\n\njsdiff(printfun(diff2), printfun(diff3), \"Words\")\n```\n\n",
+    "created" : 1419392245203.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1018081387",
+    "id" : "9190B718",
+    "lastKnownWriteTime" : 1419470544,
+    "path" : "~/GitHub/jsdiff/vignettes/jsdiff-intro.Rmd",
+    "project_path" : "vignettes/jsdiff-intro.Rmd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

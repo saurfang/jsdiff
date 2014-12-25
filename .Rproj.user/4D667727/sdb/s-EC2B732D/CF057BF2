@@ -1,0 +1,16 @@
+{
+    "contents" : "{\n  \"name\": \"jsdiff\",\n  \"repo\": \"kpdecker/jsdiff\",\n  \"description\": \"A javascript text diff implementation.\",\n  \"keywords\": [\n    \"diff\",\n    \"text\"\n  ],\n  \"version\": \"1.2.0\",\n  \"scripts\": [ \"diff.js\" ],\n  \"main\":  \"diff.js\",\n  \"license\": \"BSD\"\n}\n",
+    "created" : 1419388914930.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1466186207",
+    "id" : "CF057BF2",
+    "lastKnownWriteTime" : 1419388918,
+    "path" : "~/GitHub/jsdiff/inst/htmlwidgets/lib/jsdiff/bower.json",
+    "project_path" : "inst/htmlwidgets/lib/jsdiff/bower.json",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

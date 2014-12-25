@@ -1,0 +1,16 @@
+{
+    "contents" : "# Introduction to jsdiff\n\nFrom http://adv-r.had.co.nz/Profiling.html\n\n```r\ndiff2 <- function (x, lag = 1L, differences = 1L) {\n  xlen <- length(x)\n  if (length(lag) > 1L || length(differences) > 1L || \n      lag < 1L || differences < 1L)\n    stop(\"'lag' and 'differences' must be integers >= 1\")\n\n  if (lag * differences >= xlen) {\n    return(x[0L])\n  }\n\n  i1 <- -seq_len(lag)\n  for (i in seq_len(differences)) {\n    x <- x[i1] - x[-length(x):-(length(x) - lag + 1L)]\n  }\n  x\n}\n\ndiff3 <- function (x, lag = 1L) {\n  xlen <- length(x)\n  if (length(lag) > 1L || lag < 1L)\n    stop(\"'lag' must be integer >= 1\")\n\n  if (lag >= xlen) {\n    return(x[0L])\n  }\n\n  i1 <- -seq_len(lag)\n  x[i1] - x[-length(x):-(length(x) - lag + 1L)]\n}\n```\n\n\n```r\nlibrary(jsdiff)\n\nprintfun <- function(fun) {\n  paste(capture.output(print(fun)), collapse = \"\\n\")\n}\n\njsdiff(printfun(diff2), printfun(diff3), \"Words\")\n```\n\n<!--html_preserve--><div id=\"htmlwidget-1015\" class=\"jsdiff\">\n<div id=\"diff_type\" class=\"control-group shiny-input-radiogroup\">\n<label class=\"control-label\" for=\"diff_type\">Diff</label>\n<label class=\"radio inline\">\n<input type=\"radio\" name=\"diff_type\" id=\"diff_type1\" value=\"Chars\" checked=\"checked\"/>\n<span>Chars</span>\n</label>\n<label class=\"radio inline\">\n<input type=\"radio\" name=\"diff_type\" id=\"diff_type2\" value=\"Words\"/>\n<span>Words</span>\n</label>\n<label class=\"radio inline\">\n<input type=\"radio\" name=\"diff_type\" id=\"diff_type3\" value=\"Lines\"/>\n<span>Lines</span>\n</label>\n</div>\n<pre>\n<code></code>\n</pre>\n</div>\n<script type=\"application/json\" data-for=\"htmlwidget-1015\">{ \"x\": {\n \"oldStr\": \"function (x, lag = 1L, differences = 1L) {\\n  xlen <- length(x)\\n  if (length(lag) > 1L || length(differences) > 1L || \\n      lag < 1L || differences < 1L)\\n    stop(\\\"'lag' and 'differences' must be integers >= 1\\\")\\n\\n  if (lag * differences >= xlen) {\\n    return(x[0L])\\n  }\\n\\n  i1 <- -seq_len(lag)\\n  for (i in seq_len(differences)) {\\n    x <- x[i1] - x[-length(x):-(length(x) - lag + 1L)]\\n  }\\n  x\\n}\",\n\"newStr\": \"function (x, lag = 1L) {\\n  xlen <- length(x)\\n  if (length(lag) > 1L || lag < 1L)\\n    stop(\\\"'lag' must be integer >= 1\\\")\\n\\n  if (lag >= xlen) {\\n    return(x[0L])\\n  }\\n\\n  i1 <- -seq_len(lag)\\n  x[i1] - x[-length(x):-(length(x) - lag + 1L)]\\n}\",\n\"diffType\": \"Words\",\n\"language\": \"r\" \n},\"evals\": [  ] }</script><!--/html_preserve-->\n\n",
+    "created" : 1419470761912.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3708175397",
+    "id" : "3D979CB8",
+    "lastKnownWriteTime" : 1419470758,
+    "path" : "~/GitHub/jsdiff/vignettes/jsdiff-intro.md",
+    "project_path" : "vignettes/jsdiff-intro.md",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "markdown"
+}

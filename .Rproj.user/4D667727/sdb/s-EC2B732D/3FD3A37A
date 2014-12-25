@@ -1,0 +1,16 @@
+{
+    "contents" : "dependencies:\n- name: jsdiff\n  version: 1.2.0\n  src: htmlwidgets/lib/jsdiff\n  script: diff.js\n  stylesheet: default.css\n- name: jquery\n  version: 2.1.3\n  src: htmlwidgets/lib/jquery\n  script: dist/jquery.min.js\n- name: hilight.js\n  version: 7.0\n  src: htmlwidgets/lib/highlight\n  script: highlight.pack.js\n  stylesheet: styles/github.css\n",
+    "created" : 1419388418977.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4123061490",
+    "id" : "3FD3A37A",
+    "lastKnownWriteTime" : 1419463694,
+    "path" : "~/SkyDrive/Documents/GitHub/jsdiff/inst/htmlwidgets/jsdiff.yaml",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "yaml"
+}

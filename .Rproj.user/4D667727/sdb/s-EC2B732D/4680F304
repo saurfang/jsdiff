@@ -1,0 +1,16 @@
+{
+    "contents" : "del {\n\ttext-decoration: none;\n\tcolor: #b30000;\n\tbackground: #fadad7;\n}\nins {\n\tbackground: #eaf2c2;\n\tcolor: #406619;\n\ttext-decoration: none;\n}\n\n",
+    "created" : 1419462985432.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "939599086",
+    "id" : "4680F304",
+    "lastKnownWriteTime" : 1419463003,
+    "path" : "~/GitHub/jsdiff/inst/htmlwidgets/lib/jsdiff/default.css",
+    "project_path" : "inst/htmlwidgets/lib/jsdiff/default.css",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "css"
+}
