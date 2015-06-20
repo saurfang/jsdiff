@@ -53,14 +53,16 @@ jsdiff_html <- function(id, style, class, ...){
 }
 
 #' Widget output function for use in Shiny
-#'
+#' @inheritParams htmlwidgets::shinyWidgetOutput
+#' @param width of the widget element
+#' @param height of the widget element
 #' @export
 jsdiffOutput <- function(outputId, width = '100%', height = '400px'){
   shinyWidgetOutput(outputId, 'jsdiff', width, height, package = 'jsdiff')
 }
 
 #' Widget render function for use in Shiny
-#'
+#' @inheritParams htmlwidgets::shinyRenderWidget
 #' @export
 renderJsdiff <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
